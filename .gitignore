@@ -1,4 +1,3 @@
-layout/
 wp-config.php
 wp-content/themes/beecorp/gulp/node_modules
 wp-content/themes/beecorp/gulp/package-lock.json
