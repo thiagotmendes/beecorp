@@ -1,0 +1,66 @@
+.main-control
+
+  &__menu
+    position: absolute
+    width: 100%
+    top: -45px
+    display: flex
+    justify-content: space-between
+    border-radius: 6px
+    background-color: #3A3A3A
+    box-shadow: 0px 0px 40px rgba(122, 119, 134, 0.1)
+
+    &--link
+      width: 33.3%
+      color: white
+      font-size: 16px
+      padding: 20px 15px
+      display: flex
+      justify-content: center
+      align-items: center
+      transition-duration: .8s
+
+      &--about
+        color: $orange
+        font-style: normal
+        font-weight: bold
+        font-size: 16px
+
+        span
+          color: #4E4B59
+          display: block
+
+        &:hover
+          text-decoration: none
+          color: $orange
+
+      &:first-child
+        border-top-left-radius: 6px
+        border-bottom-left-radius: 6px
+
+      &:last-child
+        border-top-right-radius: 6px
+        border-bottom-right-radius: 6px
+
+      &:hover
+        background-color: $blue
+        text-decoration: none
+        color: white
+
+      span
+        display: block
+        color: $orange
+        font-style: normal
+        font-weight: 600
+        font-size: 18px
+
+      &--icon
+        background-color: #535353
+        width: 50px
+        height: 50px
+        border-radius: 50%
+        display: flex
+        align-items: center
+        justify-content: center
+        margin-right: 10px
+        font-size: 24px

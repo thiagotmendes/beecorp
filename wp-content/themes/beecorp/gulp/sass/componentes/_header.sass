@@ -1,0 +1,23 @@
+.main-header
+  padding-top: $inner
+  padding-bottom: $inner
+
+
+  &__container
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    justify-content: space-between
+
+    @media ($break-xs)
+      justify-content: space-between
+
+.scroll-nav
+  background-color: white
+  padding-top: 5px
+  padding-bottom: 5px
+  //transition-duration: .7s
+  border-bottom: $blue solid 1px
+
+  img
+    transform: scale(.7)

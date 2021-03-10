@@ -1,0 +1,19 @@
+.main-link
+  display: block
+  position: relative
+
+  &:before
+    content: ''
+    width: 0%
+    height: 3px
+    position: absolute
+    left: 0
+    bottom: -5px
+    background-color: $orange
+    transition-duration: .7s
+
+  &:hover
+
+    &:before
+      width: 100%
+

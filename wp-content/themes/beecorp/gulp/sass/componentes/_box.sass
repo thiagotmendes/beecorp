@@ -1,0 +1,44 @@
+.main-box
+  background: #FFFFFF
+  /* drop shadow */
+  box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.4)
+  border-radius: 20px
+  padding: 30px
+  margin-bottom: 15px
+  margin-top: 15px
+  transition-duration: .7s
+
+  &:hover
+    background-color: rgba($blue, .6)
+
+    h4
+      color: white
+
+  &__image
+    margin-bottom: 20px
+
+  &__link
+    color: #7D7987
+
+    &:hover
+      text-decoration: none
+      color: white
+
+  &--blog
+    padding: 0
+    border-radius: 6px
+    overflow: hidden
+    margin-bottom: 0
+    margin-top: 0
+
+    time
+      color: $orange
+
+    &:hover
+      background-color: rgba($orange, .6)
+
+      time
+        color: white
+
+  &__description
+    padding: $inner

@@ -1,0 +1,58 @@
+.main-menu
+
+  @media ($break-xs)
+    display: none
+
+  &__nav
+    display: flex
+    list-style: none
+    padding: 0
+    margin: 0
+
+    &__link
+      font-style: normal
+      font-weight: 600
+      font-size: 16px
+      color: $black
+      margin-right: 20px
+
+      &:hover
+        color: $orange
+        text-decoration: none
+
+  //
+  &__footer
+    display: flex
+    justify-content: space-between
+
+    &__item
+      display: block
+      list-style: none
+      padding: 0
+      margin: -5px 0 0
+
+      &--title
+        font-style: normal
+        font-weight: bold
+        font-size: 14px
+        line-height: 16px
+        /* identical to box height, or 114% */
+        letter-spacing: -0.318182px
+        color: $blue !important
+
+      a
+        font-style: normal
+        font-weight: 500
+        font-size: 14px
+        //line-height: 26px
+        /* identical to box height, or 186% */
+        letter-spacing: -0.5px
+        color: #636363
+        margin-bottom: 10px
+
+        &:hover
+          text-decoration: none
+
+  &__solution
+    display: flex
+    justify-content: center

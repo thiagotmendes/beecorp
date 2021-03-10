@@ -1,0 +1,50 @@
+.main-banner
+  height: 80%
+  position: relative
+  display: block
+
+  &__principal
+    height: 100%
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center top
+    //
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    //
+    position: relative
+
+    &:before
+      content: ''
+      position: absolute
+      height: 100%
+      width: 100%
+      left: 0
+      top: 0
+      background: radial-gradient(77.74% 136.59% at 22.26% 40.72%, #FFFFFF 6.25%, rgba(255, 255, 255, 0) 80.79%)
+
+  &__interno
+    height: 150px
+    background-color: $orange
+    display: flex
+    align-items: center
+    justify-content: space-between
+    background-size: cover
+    background-position: center top
+
+    &--container
+      display: flex
+      justify-content: space-between
+      align-items: center
+
+  &__breadcrumb
+
+    &--item
+      margin-bottom: 0
+      color: white
+
+      a
+        color: white
+        font-weight: bold
