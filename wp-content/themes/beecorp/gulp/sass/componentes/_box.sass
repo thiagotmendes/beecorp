@@ -1,28 +1,39 @@
 .main-box
   background: #FFFFFF
   /* drop shadow */
-  box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.4)
+  //box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.4)
   border-radius: 20px
   padding: 30px
-  margin-bottom: 15px
-  margin-top: 15px
   transition-duration: .7s
+  border: 1px solid $blue
+  height: 100%
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  align-items: flex-start
 
   &:hover
-    background-color: rgba($blue, .6)
+    //background-color: rgba($blue, .6)
 
     h4
-      color: white
+      //color: white
 
   &__image
     margin-bottom: 20px
 
+    &--cliente
+      filter: brightness(0%);
+
   &__link
     color: #7D7987
+    margin-bottom: 30px
 
     &:hover
       text-decoration: none
-      color: white
+      color: #7D7987
+
+    &:first-child
+      margin-top: 0
 
   &--blog
     padding: 0
@@ -30,15 +41,24 @@
     overflow: hidden
     margin-bottom: 0
     margin-top: 0
+    height: 100%
+    margin-bottom: 30px
+
+    &:last-child
+      margin-bottom: 0
 
     time
       color: $orange
 
     &:hover
-      background-color: rgba($orange, .6)
+      //background-color: rgba($orange, .6)
 
       time
-        color: white
+        //color: white
 
   &__description
     padding: $inner
+    justify-content: space-between
+    display: flex
+    flex-direction: column
+    align-items: flex-start

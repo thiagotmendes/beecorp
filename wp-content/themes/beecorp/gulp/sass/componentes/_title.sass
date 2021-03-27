@@ -3,6 +3,15 @@
   font-weight: 600
   color: $black
 
+  &--blue
+    color: $blue
+
+  &--orange
+    color: $orange
+
+  &--white
+    color: white
+
   &__sub-title
     display: block
     font-style: normal
@@ -18,11 +27,15 @@
     font-size: 48px
     line-height: 56px
 
+    @media ($break-xs)
+      font-size: 30px
+      line-height: 35px
+
   &__solucoes
     font-style: normal
     font-weight: bold
     font-size: 24px
-    line-height: 56px
+    //line-height: 56px
 
   &__section
     font-style: normal
@@ -38,3 +51,49 @@
 
     &--white
       color: white
+
+  &__interno
+    font-style: normal;
+    font-weight: 800;
+    font-size: 50px;
+
+    @media ($break-xs)
+      font-size: 30px
+      margin-top: 15px
+
+  &__description
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 20px
+
+  &__topic
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 20px
+    display: block
+    position: relative
+
+    @media ($break-xs)
+      margin-left: 20px
+
+    &:first-child
+      margin-top: 0
+
+    &:before
+      content: '';
+      border: #EB9003 solid 3px;
+      background-color: white;
+      position: absolute;
+      -webkit-transition-duration: 2s;
+      -o-transition-duration: 2s;
+      transition-duration: 2s;
+      width: 15px;
+      height: 15px;
+      left: -20px;
+      top: 5px;
+      border-radius: 50%;
+      z-index: 100;

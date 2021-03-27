@@ -2,10 +2,11 @@
 global $wpdb, $currentCategory, $diretorio;
 
 require_once('functions/includes.php');
-//require_once('functions/ctp.php');
-require_once ('functions/nav_menu_principal.php');
+require_once('functions/cpt.php');
+//require_once ('functions/nav_menu_principal.php');
 require_once ('functions/add_options_page.php');
 require_once ('functions/acf_fields.php');
+require_once ('functions/wp_bootstrap_menuwalker.php');
 // diretiorio do template
 $diretorio = get_template_directory();
 // remove a barra de admin do front do site
@@ -17,20 +18,6 @@ function cc_mime_types($mimes) {
     return $mimes;
 }
 add_filter('upload_mimes', 'cc_mime_types');
-
-// converte hexadecimal para RGB
-function hexToRgb($hex, $alpha = false) {
-   $hex      = str_replace('#', '', $hex);
-   $length   = strlen($hex);
-   $rgb['r'] = hexdec($length == 6 ? substr($hex, 0, 2) : ($length == 3 ? str_repeat(substr($hex, 0, 1), 2) : 0));
-   $rgb['g'] = hexdec($length == 6 ? substr($hex, 2, 2) : ($length == 3 ? str_repeat(substr($hex, 1, 1), 2) : 0));
-   $rgb['b'] = hexdec($length == 6 ? substr($hex, 4, 2) : ($length == 3 ? str_repeat(substr($hex, 2, 1), 2) : 0));
-   if ( $alpha ) {
-      $rgb['a'] = $alpha;
-   }
-   return $rgb;
-}
-//  modo de uso: echo hexToRgb($valorHexadecimalDaCor) ou echo hexToRgb($valorHexadecimalDaCor, $porcetagemDeTransparencia)
 
 add_action('init', 'do_output_buffer');
 function do_output_buffer() {

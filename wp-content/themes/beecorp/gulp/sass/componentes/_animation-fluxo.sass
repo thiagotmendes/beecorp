@@ -1,0 +1,76 @@
+.main-animation
+  display: flex
+
+  @media ($break-xs)
+    flex-direction: column
+
+  &__col
+    //padding-left: 15px
+    //padding-right: 15px
+    font-weight: 500
+    font-size: 16px
+    line-height: 24px
+    padding-top: $inner * 2
+    max-width: 33%
+
+    @media ($break-xs)
+      max-width: 100%
+      margin-top: $inner
+
+      &:first-child
+        margin-top: 0
+
+    &__description
+      padding-right: 15px
+      padding-left: 15px
+      width: 100%
+
+    &__col-title
+      padding-right: 15px
+      padding-left: 15px
+      font-style: normal
+      font-weight: bold
+      font-size: 20px
+      display: block
+      position: relative
+
+      &:before
+        content: ''
+        border: $orange solid 0px
+        background-color: white
+        position: absolute
+        transition-duration: 2s
+        width: 0px
+        height: 0px
+        left: 0%
+        top: -$inner * 2
+        border-radius: 50%
+        z-index: 100
+
+      &:after
+        content: ''
+        width: 0
+        height: 5px
+        background-color: $orange
+        position: absolute
+        transition-duration: 2s
+        left: 0
+        top: -38px
+        z-index: 1
+
+      &--active
+
+        &:before
+          border: $orange solid 3px
+          width: 30px
+          height: 30px
+          left: 45%
+
+        &:after
+          width: 100%
+
+    &:first-child
+      padding-left: 0
+
+    &:last-child
+      padding-right: 0

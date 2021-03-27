@@ -9,7 +9,13 @@
     padding: 0
     margin: 0
 
-    &__link
+    .dropdown:hover>.dropdown-menu
+      display: block
+
+    .dropdown > .dropdown-toggle :active
+      pointer-events: none
+
+    li > a
       font-style: normal
       font-weight: 600
       font-size: 16px

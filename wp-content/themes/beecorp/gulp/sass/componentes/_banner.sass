@@ -48,3 +48,40 @@
       a
         color: white
         font-weight: bold
+
+  &__single
+    background-color: $orange
+    height: auto
+    min-height: 200px
+
+    &--container
+      display: flex
+      color: white
+
+      @media ($break-xs)
+        flex-direction: column-reverse
+
+      &--col-1
+        width: 50%
+        padding-right: 15px
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+
+        @media ($break-xl)
+          padding-left: 15%
+
+        @media ($break-lg)
+          padding-left: 10%
+
+        @media ($break-xs)
+          width: 100%
+          padding-left: 15px
+          padding-bottom: $inner * 2
+
+      &--col-2
+        width: 50%
+
+        @media ($break-xs)
+          width: 100%

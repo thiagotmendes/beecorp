@@ -24,3 +24,37 @@
     &:focus, &:hover
       background-color: $blue
       color: white
+
+    &--orange
+      background-color: $orange !important
+      color: white
+      border: 1px solid $orange
+
+      &:hover
+        background-color: white !important
+        color: $orange
+
+      &--active
+        background-color: white !important
+        color: $orange
+
+    &--search
+      padding: 0 20px
+
+  &--white
+    background-color: white
+    color: $orange
+    border: $orange solid 1px
+
+    &:hover
+      background-color: transparent
+      border: white solid 1px
+      color: white
+
+    &__solution
+      border: $orange solid 1px
+
+      &:hover
+        background-color: $orange
+        border: $orange solid 1px
+        color: white

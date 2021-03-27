@@ -16,19 +16,25 @@
 <header class="main-header main-nav">
     <div class="container main-header__container">
         <div class="">
-            <img src="<?= get_template_directory_uri() ?>/assets/images/logo.png" alt="<?= bloginfo('name') ?>" class="">
+            <a href="<?= esc_url(home_url('/')) ?>">
+                <img src="<?= get_template_directory_uri() ?>/assets/images/logo.png" alt="<?= bloginfo('name') ?>" class="">
+            </a>
         </div>
         <div class="">
-            <nav class="main-menu">
-                <ul class="main-menu__nav">
-                    <li><a href="<?= esc_url(home_url('quem-somos')) ?>" class="main-menu__nav__link main-link">Sobre nós</a></li>
-                    <li><a href="" class="main-menu__nav__link main-link">Clientes</a></li>
-                    <li><a href="<?= esc_url(home_url('solucoes')) ?>" class="main-menu__nav__link main-link">Soluções</a></li>
-                    <li><a href="" class="main-menu__nav__link main-link">Consultoria</a></li>
-                    <li><a href="" class="main-menu__nav__link main-link">Conteúdo</a></li>
-                    <li><a href="<?= esc_url(home_url('contato')) ?>" class="main-menu__nav__link main-link">Fale Conosco</a></li>
-                </ul>
-            </nav>
+	        <?php
+	        wp_nav_menu([
+		        'menu'            => 'menu_principal',
+//		        'theme_location'  => 'menu_principal',
+		        'container'       => 'nav',
+		        'container_id'    => 'bs4navbar',
+		        'container_class' => 'main-menu',
+		        'menu_id'         => false,
+		        'menu_class'      => 'main-menu__nav',
+		        'depth'           => 2,
+		        'fallback_cb'     => 'bs4navwalker::fallback',
+		        'walker'          => new bs4navwalker()
+	        ]);
+	        ?>
         </div>
     </div>
 </header>
