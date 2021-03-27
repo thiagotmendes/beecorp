@@ -2,13 +2,14 @@
 <?php
 if(have_posts()){
 	while(have_posts()){ the_post();
+	    $clienteRelacionado = get_field('relacionar_cliente');
 		?>
 		<section class="main-banner main-banner__single">
 			<div class="main-banner__single--container">
 				<div class="main-banner__single--container--col-1">
 					<header>
 						<div class="main-box__image main-box__image--cliente text-center">
-							<img src="<?= get_template_directory_uri() ?>/assets/images/sendgrid.png" alt="">
+							<img src="<?= get_the_post_thumbnail_url( $clienteRelacionado[0]->ID ) ?>" alt="" class="img-fluid">
 						</div>
 						<h1 class="main-title main-title__interno main-title--white">
 							<?php the_title() ?>
@@ -22,31 +23,39 @@ if(have_posts()){
 			</div>
 		</section>
 
-		<section class="main-section main-section__single ">
+		<section class="main-section main-section__single main-section__background-efects main-section__background-efects--blue">
 			<div class="container main-section__single--first">
 				<h2 class="main-title main-title__sub-title text-center">
 					Sobre o projeto
 				</h2>
-				<p>
-					A Reflexologia é uma técnica específica de pressão que atua em pontos reflexos
-					precisos dos pés com base na teoria de que as áreas reflexas correspondem a todas
-					as partes do corpo. Ela impacta diretamente no equilíbrio da energia e evita o surgimento
-					de doenças e problemas de saúde.
-				</p>
+				<?php the_content(); ?>
+            </div>
+        </section>
 
-				<p>
-					Entre outros benefícios, a reflexologia proporciona o bem-estar através de teorias holísticas.
-					O termo “holístico” é derivado da palavra grega holos, que significa “inteiro” e, assim,
-					procura tratar o indivíduo como um todo, constituído de corpo, mente e alma.
-				</p>
+        <section class="main-section main-section__single ">
+            <div class="container main-section__background-efects main-section__background-efects--blue">
 
-				<p>
-					Não deve ser confundida com a massagem básica dos pés ou com a massagem corporal. Cada parte do
-					corpo e cada função orgânica possui seu ponto reflexo correspondente nos pés.
-				</p>
-			</div>
-		</section>
+                <h2 class="main-title main-title__section--orange text-center">
+                    Depoimento
+                </h2>
 
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                        <div class="main-section__depoimentos__item">
+                            <div class="main-section__depoimentos__item--description">
+                                <?= get_field('depoimento', $clienteRelacionado[0]->ID ) ?>
+                            </div>
+                            <div class="main-section__depoimentos__autor">
+                                <h6>
+	                                <?= get_field('profissional', $clienteRelacionado[0]->ID ) ?>
+                                    <small><?= get_field('cargo', $clienteRelacionado[0]->ID ) ?></small>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 		<?php
 		get_template_part('parts/loop/loop-solucao-relacionada');
 		get_template_part('parts/loop/loop-blog-relacionado');

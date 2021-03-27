@@ -1,16 +1,17 @@
 <?php
-if(is_home()){
+if( is_home() ){
 	$tituloPreFooter = get_field('titulo_pre_footer', 'option');
 	$descricaoPreFooter = get_field('descricao_pre_footer', 'option');
 	$tipoCta = get_field('tipo_de_cta', 'option');
 	$direcionamentoCta = get_field('direcionamento', 'option');
 	$imagemPreFooter = get_field('imagem_pre_footer', 'option');
 } else {
-	$tituloPreFooter = get_field('titulo_pre_footer');
-	$descricaoPreFooter = get_field('descricao_pre_footer');
-	$tipoCta = get_field('tipo_de_cta');
-	$direcionamentoCta = get_field('direcionamento');
-	$imagemPreFooter = get_field('imagem_pre_footer', 'option');
+	$tituloPreFooter = get_field('titulo_pre_footer', get_the_ID());
+	$descricaoPreFooter = get_field('descricao_pre_footer', get_the_ID());
+	$tipoCta = get_field('tipo_de_cta', get_the_ID());
+	$direcionamentoCta = get_field('direcionamento', get_the_ID());
+	$imagemPreFooter = get_field('imagem_pre_footer', get_the_ID());
+
 }
 
 //

@@ -208,6 +208,18 @@ $urls = array_diff( $urls, array( $emoji_svg_url ) );
 return $urls;
 }
 
+function template_chooser($template)
+{
+	global $wp_query;
+	$post_type = get_query_var('post_type');
+	if( $wp_query->is_search && $post_type == 'solucoes' )
+	{
+		return locate_template('search-solution.php');  //  redirect to archive-search.php
+	}
+	return $template;
+}
+add_filter('template_include', 'template_chooser');
+
 //add_action('wp_ajax_insereDados', 'insereDados');
 //add_action('wp_ajax_nopriv_insereDados', 'insereDados' ); // aparentemente não é obrigatorio utilizar este action
 //function insereDados(){

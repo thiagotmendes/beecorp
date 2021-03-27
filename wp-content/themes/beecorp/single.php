@@ -25,7 +25,12 @@ if(have_posts()){
 		</section>
 		<section class="main-section main-section__single ">
 			<div class="container main-section__single--first">
-				<?php the_content(); ?>
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+	                    <?php the_content(); ?>
+                    </div>
+                </div>
+
 			</div>
 		</section>
         <?php

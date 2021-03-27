@@ -1,4 +1,3 @@
-<?php /* Template name: Soluções */ ?>
 <?php get_header() ?>
     <section class="main-banner main-banner__interno" style="background-image: url(<?= get_template_directory_uri() ?>/assets/images/banner.png)">
         <header class="container main-banner__interno--container">

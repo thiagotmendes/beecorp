@@ -1,7 +1,5 @@
-<?php /* Template name: Soluções */ ?>
 <?php
 $termTitle = get_queried_object()->name;
-$termId = get_queried_object()->term_id;
 get_header();
 ?>
 	<section class="main-banner main-banner__interno" style="background-image: url(<?= get_template_directory_uri() ?>/assets/images/banner.png)">
@@ -42,27 +40,7 @@ get_header();
 			</header>
 
 			<div class="">
-				<nav class="main-menu__solution">
-					<?php
-					$argTerms = array(
-						'taxonomy' => 'tax_solution',
-						'hide_empty' => false,
-					);
-					$terms = get_terms($argTerms);
-					foreach ($terms as $term):
-                        if( $term->term_id == $termId ):
-                            $classActive = "main-btn__solution--orange--active";
-                        else:
-	                        $classActive = "";
-                        endif
-						?>
-						<a href="<?= get_term_link($term) ?>" class="btn main-btn main-btn__solution main-btn__solution--orange <?= $classActive ?>">
-							<?= $term->name ?>
-						</a>
-					<?php
-					endforeach;
-					?>
-				</nav>
+				<?php get_template_part('parts/category-nav/category-solution') ?>
 			</div>
 
 			<div class="">

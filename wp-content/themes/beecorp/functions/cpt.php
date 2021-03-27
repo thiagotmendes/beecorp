@@ -76,4 +76,36 @@ function create_posttype(){
 			)
 		)
 	);
+
+	// cria os post_type necessário
+	register_post_type('ebooks',
+		array(
+			'labels' => array(
+				'name' => __( 'Ebooks', 'boilerplate' ),
+				'singular_name' => __('Ebooks', 'boilerplate' )
+			),
+			'show_in_rest' => true,
+			'public' => true,
+			'hierarchical' => true,
+			'has_archive' => 'materiais-ricos',
+			'menu_position' => 5,
+			'rewrite' => array('slug' => 'materiais-ricos'),
+			'supports' => array(
+				'title',
+//				'editor',
+				'thumbnail',
+//				'page-attributes'
+			)
+		)
+	);
+
+	register_taxonomy(
+		'tax_ebook',
+		'ebooks',
+		array(
+			'label' => __( 'Categorias ebooks', 'boilerplate' ),
+			'rewrite' => array( 'slug' => 'materiais-ricos' ),
+			'hierarchical' => true,
+		)
+	);
 }

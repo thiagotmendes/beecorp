@@ -2,7 +2,7 @@
 $relatedSolution = get_field('escolher_solucoes');
 if(!empty($relatedSolution)):
 ?>
-    <section class="main-section">
+    <section class="main-section main-section__background-efects main-section__background-efects--blue">
         <div class="container main-section__solucoes--relacionadas">
             <header class="text-center">
                 <h5 class="main-title main-title__section main-title__section--blue">Soluções relacionadas</h5>

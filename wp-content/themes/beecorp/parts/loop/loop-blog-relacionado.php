@@ -1,7 +1,7 @@
 <?php $blogRelacionado = get_field('escolher_conteudos');
 if($blogRelacionado):
 ?>
-    <section class="main-section main-section__blog">
+    <section class="main-section main-section__blog main-section__background-efects main-section__background-efects--white">
         <div class="container">
             <header class="text-center">
                 <h5 class="main-title main-title__section--white main-title__section">Conteúdos relacionados</h5>
