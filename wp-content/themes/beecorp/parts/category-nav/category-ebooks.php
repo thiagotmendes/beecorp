@@ -17,6 +17,6 @@
 			<?= $term->name ?>
 		</a>
 	<?php
-	endforeach;
+	endforeach
 	?>
 </nav>

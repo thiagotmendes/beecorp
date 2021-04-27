@@ -10,6 +10,13 @@ if(have_posts()){
 						<h1 class="main-title main-title__interno main-title--white">
 							<?php the_title() ?>
 						</h1>
+                        <div class="">
+							<?php
+							if ( function_exists('yoast_breadcrumb') ) {
+								yoast_breadcrumb( '<p id="breadcrumbs" class="main-banner__breadcrumb--item">','</p>' );
+							}
+							?>
+                        </div>
 					</header>
 				</div>
 				<div class="main-banner__single--container--col-2">
@@ -30,9 +37,17 @@ if(have_posts()){
 	                    <?php the_content(); ?>
                     </div>
                 </div>
-
 			</div>
 		</section>
+        <section class="main-section main-section__comment ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+						<?php comments_template() ?>
+                    </div>
+                </div>
+            </div>
+        </section>
         <?php
         get_template_part('parts/loop/loop-solucao-relacionada');
         get_template_part('parts/loop/loop-blog-relacionado');

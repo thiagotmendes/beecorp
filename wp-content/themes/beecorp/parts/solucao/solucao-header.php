@@ -9,6 +9,13 @@
 				<div class="main-title__description">
 					<?= get_field('descricao_header') ?>
 				</div>
+                <div class="">
+	                <?php
+	                if ( function_exists('yoast_breadcrumb') ) {
+		                yoast_breadcrumb( '<p id="breadcrumbs" class="main-banner__breadcrumb--item">','</p>' );
+	                }
+	                ?>
+                </div>
 				<?php if($ctaInfo['texto_cta']): ?>
 				<?php
 					$linkCta = ($ctaInfo['interno'] == 'interno') ? $ctaInfo['link_interno'] : $ctaInfo['link_externo'];

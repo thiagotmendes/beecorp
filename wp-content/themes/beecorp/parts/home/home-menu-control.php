@@ -1,33 +1,19 @@
+<?php if(have_rows('adicionar_menu_especial', 'option')): ?>
 <section class="main-control">
 	<div class="container">
 		<div class="main-control__menu">
+            <?php while(have_rows('adicionar_menu_especial', 'option')): the_row() ?>
 			<a href="" class="main-control__menu--link">
 				<div class="main-control__menu--link--icon">
-					<i class="icon icon-life"></i>
+                    <img src="<?= get_sub_field('icone_menu_especial') ?>" alt="" width="25">
 				</div>
 				<div class="main-control__menu__description">
-					<span>Qualidade de vida <i class="icon icon-arrow-double"></i></span>
-					Proin diam velit facilisis est
+					<span> <?= get_sub_field('titulo_menu_especial') ?> <i class="icon icon-arrow-double"></i></span>
+					<?= get_sub_field('sub_titulo_menu_especial') ?>
 				</div>
 			</a>
-			<a href="" class="main-control__menu--link">
-				<div class="main-control__menu--link--icon">
-					<i class="icon icon-helth"></i>
-				</div>
-				<div class="main-control__menu__description">
-					<span>Saúde <i class="icon icon-arrow-double"></i></span>
-					Ultrices nam malesuada nulla
-				</div>
-			</a>
-			<a href="" class="main-control__menu--link">
-				<div class="main-control__menu--link--icon">
-					<i class="icon icon-hands"></i>
-				</div>
-				<div class="main-control__menu__description">
-					<span>Ergonomia <i class="icon icon-arrow-double"></i></span>
-					Elementum morbi viverra nulla
-				</div>
-			</a>
+            <?php endwhile; ?>
 		</div>
 	</div>
 </section>
+<?php endif; ?>

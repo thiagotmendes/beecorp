@@ -2,10 +2,10 @@
 $relatedSolution = get_field('escolher_solucoes');
 if(!empty($relatedSolution)):
 ?>
-    <section class="main-section main-section__background-efects main-section__background-efects--blue">
+    <section class="main-section main-section__background-efects main-section__background-efects--blue main-section__background-efects--left" >
         <div class="container main-section__solucoes--relacionadas">
             <header class="text-center">
-                <h5 class="main-title main-title__section main-title__section--blue">Soluções relacionadas</h5>
+                <h5 class="main-title main-title__section">Soluções relacionadas</h5>
                 <div class="main-title main-title__sub-title">Conheça outras soluções</div>
             </header>
             <div class="row">
@@ -16,7 +16,9 @@ if(!empty($relatedSolution)):
                         <a href="" class="main-box__link">
                             <div class="main-box">
                                 <div class="main-box__image">
-                                    <img src="<?= get_field('icone_item') ?>" alt="">
+                                    <?php if(get_field('icone_item')): ?>
+                                        <img src="<?= get_field('icone_item') ?>" alt="<?= get_the_title() ?>" width="50">
+                                    <?php endif; ?>
                                 </div>
                                 <header>
                                     <h4 class="main-title main-title__solucoes"><?php the_title() ?></h4>

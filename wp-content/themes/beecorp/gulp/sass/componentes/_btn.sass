@@ -58,3 +58,44 @@
         background-color: $orange
         border: $orange solid 1px
         color: white
+
+//
+.btn-suspenso
+  position: fixed
+  top: 25%
+  right: 20px
+  background: #fff
+  border: none
+  border-radius: 8px
+  -webkit-box-shadow: -1px 3px 15px -3px rgba(0,0,0,0.75)
+  -moz-box-shadow: -1px 3px 15px -3px rgba(0,0,0,0.75)
+  box-shadow: -1px 3px 15px -3px rgba(0,0,0,0.75)
+  padding: 10px 20px
+  transition-duration: 1s
+  z-index: 2000
+
+  &:hover, &--active
+    background-color: $orange
+    text-decoration: none
+    color: white
+
+  &__box
+    top: 31%
+    padding-top: 40px
+    padding-bottom: 20px
+    width: 400px
+    height: auto
+    right: -100%
+    transition-duration: 2s
+
+    &:hover
+      background-color: white
+      color: black
+
+    &--active
+      right: 20px
+
+.icon-arrow-double
+  position: relative
+  top: 4px
+  margin-left: 5px

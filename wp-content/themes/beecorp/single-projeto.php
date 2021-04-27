@@ -14,6 +14,13 @@ if(have_posts()){
 						<h1 class="main-title main-title__interno main-title--white">
 							<?php the_title() ?>
 						</h1>
+                        <div class="">
+							<?php
+							if ( function_exists('yoast_breadcrumb') ) {
+								yoast_breadcrumb( '<p id="breadcrumbs" class="main-banner__breadcrumb--item">','</p>' );
+							}
+							?>
+                        </div>
 						<a href="" class="main-btn btn main-btn--white">Solicitar uma proposta</a>
 					</header>
 				</div>
@@ -23,7 +30,7 @@ if(have_posts()){
 			</div>
 		</section>
 
-		<section class="main-section main-section__single main-section__background-efects main-section__background-efects--blue">
+		<section class="main-section main-section__primeira-dobra main-section__single main-section__background-efects main-section__background-efects--blue main-section__background-efects--left">
 			<div class="container main-section__single--first">
 				<h2 class="main-title main-title__sub-title text-center">
 					Sobre o projeto
@@ -33,7 +40,7 @@ if(have_posts()){
         </section>
 
         <section class="main-section main-section__single ">
-            <div class="container main-section__background-efects main-section__background-efects--blue">
+            <div class="container main-section__background-efects main-section__background-efects--blue main-section__background-efects--right">
 
                 <h2 class="main-title main-title__section--orange text-center">
                     Depoimento

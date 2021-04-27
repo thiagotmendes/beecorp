@@ -2,12 +2,15 @@
   height: 80%
   position: relative
   display: block
+  overflow: hidden
 
   &__principal
     height: 100%
+    width: 100%
     background-size: cover
     background-repeat: no-repeat
     background-position: center top
+
     //
     display: flex
     flex-direction: column
@@ -38,6 +41,9 @@
       display: flex
       justify-content: space-between
       align-items: center
+
+      @media ($break-xs)
+        flex-direction: column
 
   &__breadcrumb
 
@@ -85,3 +91,40 @@
 
         @media ($break-xs)
           width: 100%
+
+// IMG banner responsivo
+.img-picture
+  position: absolute
+  width: 100%
+  height: 100%
+
+  &:before
+    content: ''
+    position: absolute
+    height: 100%
+    width: 100%
+    left: 0
+    top: 0
+    background: radial-gradient(77.74% 136.59% at 22.26% 40.72%, #FFFFFF 6.25%, rgba(255, 255, 255, 0) 80.79%)
+    z-index: 200
+
+  img
+    width: 100%
+
+.embed-container
+  position: relative
+  padding-bottom: 56.25%
+  overflow: hidden
+  max-width: 100%
+  height: auto
+
+  &:before
+    content: ''
+    position: absolute
+
+  iframe, object, embed
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%

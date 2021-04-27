@@ -1,4 +1,4 @@
-<section class="main-section main-section__blog main-section__background-efects main-section__background-efects--white">
+<section class="main-section main-section__blog main-section__background-efects main-section__background-efects--white main-section__background-efects--right">
 	<div class="container">
 		<header class="text-center">
 			<h5 class="main-title main-title__section main-title__section--white">
@@ -20,10 +20,11 @@
             <?php
             $count = 0;
             foreach ($loopPosts as $post): setup_postdata($post);
+	            $currentTerm = get_the_terms( get_the_ID(), 'category' );
                 if($count < 1):
                     $idPrincipal = get_the_ID();
                 ?>
-                <div class="col-md-6">
+                <div class="col-md-6 mb-3">
                     <div class="main-box main-box--blog">
                         <div class="">
 	                        <?php
@@ -37,14 +38,29 @@
                         <div class="main-box__description">
                             <header>
                                 <time>
-	                                <?php the_time( 'l, F j, Y' ); ?>.
+	                                <?php the_time( 'l, F j, Y' ) ?>.
                                 </time>
                                 <h5 class="main-title main-title__section">
                                     <?php the_title() ?>
+
+                                    <div class="assets_blog">
+                                        <small class="main-title main-title__section--small">Autor: <?php the_author() ?></small>
+                                        <small class="main-title main-title__section--small main-title__section--small--orange">
+			                                <?php
+			                                foreach ($currentTerm as $actualTerm):
+				                                echo $actualTerm->name;
+			                                endforeach
+			                                ?>
+                                        </small>
+                                    </div>
+
                                 </h5>
                             </header>
-                            <?php the_excerpt_limit(20); ?>
-                            <a href="<?php the_permalink(); ?>" class="main-control__menu--link--about main-link">Leia Mais</a>
+                            <div class="mb-3">
+	                            <?php the_excerpt_limit(50) ?>
+                            </div>
+
+                            <a href="<?php the_permalink() ?>" class="main-control__menu--link--about main-link">Leia Mais</a>
                         </div>
                     </div>
                 </div>
@@ -56,23 +72,37 @@
             ?>
 			<div class="col-md-6 main-section__blog--posts">
 				<?php
+                $marginBottom = 0;
 				foreach ($loopPosts as $post): setup_postdata($post);
+				    $classMargin = ( $marginBottom < 2 ) ? 'mb-3' :  '';
 				    if(get_the_ID() != $idPrincipal):
                         ?>
-                        <div class="main-box main-box--blog">
+                        <div class="main-box main-box--blog <?= $classMargin ?> ">
                             <div class="main-box__description">
                                 <div class="">
                                     <header>
                                         <time>
-	                                        <?php the_time( 'l, F j, Y' ); ?>.
+	                                        <?php the_time( 'l, F j, Y' ) ?>.
                                         </time>
                                         <h5 class="main-title main-title__section">
                                             <?php the_title() ?>
+
+                                            <div class="main-title__blog--small">
+                                                <small class="main-title main-title__section--small">Autor: <?php the_author() ?></small>
+                                                <small class="main-title main-title__section--small main-title__section--small--orange">
+		                                            <?php
+		                                            foreach ($currentTerm as $actualTerm):
+			                                            echo $actualTerm->name;
+		                                            endforeach
+		                                            ?>
+                                                </small>
+                                            </div>
+
                                         </h5>
                                     </header>
-                                    <p>
-	                                    <?php the_excerpt_limit(40); ?>
-                                    </p>
+                                    <div class="mb-3">
+		                                <?php the_excerpt_limit(20) ?>
+                                    </div>
                                 </div>
                                 <div class="">
                                     <a href="<?= get_the_permalink() ?>" class="main-control__menu--link--about main-link">Leia Mais</a>
@@ -81,10 +111,11 @@
                         </div>
                     <?php
                     endif;
+					$marginBottom++;
 				endforeach;
 				?>
 			</div>
 		</div>
 	</div>
 </section>
-<?php wp_reset_postdata(); ?>
+<?php wp_reset_postdata() ?>

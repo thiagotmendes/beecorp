@@ -1,11 +1,15 @@
-<section class="main-section main-section">
+<?php if(get_field('titulo_sessao_beneficio')): ?>
+<section class="main-section main-section__interno main-section main-section__background-efects main-section__background-efects--blue main-section__background-efects--right">
 	<div class="container">
 		<header class="text-center">
-			<h6 class="main-title main-title__section main-title__section--blue">BENEFÍCIOS</h6>
+			<h6 class="main-title main-title__section main-title__section--blue"><?= get_field('titulo_sessao_beneficio') ?></h6>
 			<div class="main-title main-title__sub-title">
-				Por que investir na Reflexologia?
+				<?= get_field('sub_titulo_beneficio') ?>
 			</div>
 		</header>
+        <div class="">
+	        <?= get_field('descricao_beneficios') ?>
+        </div>
         <div class="row justify-content-center  align-items-center mt-lg-5">
         <?php
         $beneficiosInfo = get_field('informacoes_sobre_os_beneficio');
@@ -64,3 +68,4 @@
 		</div>
 	</div>
 </section>
+<?php endif;

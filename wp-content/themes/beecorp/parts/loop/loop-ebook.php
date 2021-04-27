@@ -43,12 +43,12 @@
 										<?php
 										foreach ($currentTerm as $actualTerm):
 											echo $actualTerm->name;
-										endforeach;
+										endforeach
 										?>
 									</small>
 								</h5>
 							</header>
-							<?php the_field('descricao_do_ebook'); ?>
+							<?php the_field('descricao_do_ebook') ?>
 						</div>
                         <?php
                         if(get_field('tipo_de_download_de_arquivo') == 'link'){
@@ -66,6 +66,6 @@
 				</div>
 			</a>
 		</div>
-	<?php endforeach; ?>
-	<?php wp_reset_postdata(); ?>
+	<?php endforeach ?>
+	<?php wp_reset_postdata() ?>
 </div>

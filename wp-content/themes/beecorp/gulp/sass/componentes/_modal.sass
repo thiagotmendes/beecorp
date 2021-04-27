@@ -9,18 +9,21 @@
   top: 0
   left: 0
   transition-duration: 1s
-  z-index: 1100
+  z-index: 2100
+  animation: fadein 1.5s
 
   &--active
     display: flex
 
   &__body
     background-color: white
+    display: flex
+    flex-direction: column
     width: 60%
     height: auto
 
   &__description
-    padding: 30px 40px
+    padding: 30px
     display: block
     position: relative
 

@@ -15,7 +15,7 @@ get_header();
                     </div>
                 </header>
 			</section>
-            <section class="main-section main-section__background-efects main-section__background-efects--blue">
+            <section class="main-section main-section__background-efects main-section__background-efects--blue main-section__background-efects--left">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-10 offset-md-1">

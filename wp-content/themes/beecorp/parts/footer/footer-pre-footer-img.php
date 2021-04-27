@@ -45,7 +45,7 @@ if(!empty($tituloPreFooter)):
                             <a href="<?= $direcionamentoCta ?>"  class="btn main-btn">
                                 Fale com nossos especialistas
                             </a>
-                        <?php endif; ?>
+                        <?php endif ?>
                     </div>
                 </div>
             </div>

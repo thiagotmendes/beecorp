@@ -3,7 +3,7 @@
 	$termId = get_queried_object()->term_id;
 	$argTerms = array(
 		'taxonomy' => 'category',
-		'hide_empty' => false,
+		'hide_empty' => true,
 	);
 	$terms = get_terms($argTerms);
 	foreach ($terms as $term):
@@ -17,6 +17,6 @@
 			<?= $term->name ?>
 		</a>
 	<?php
-	endforeach;
+	endforeach
 	?>
 </nav>

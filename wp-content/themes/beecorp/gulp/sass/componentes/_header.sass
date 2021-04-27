@@ -2,6 +2,10 @@
   padding-top: $inner
   padding-bottom: $inner
 
+  &__logo
+    position: relative
+    z-index: 2000
+
   &__container
     display: flex
     align-items: center
@@ -11,12 +15,32 @@
     @media ($break-xs)
       justify-content: space-between
 
+.scroll-block
+  margin: 0
+  height: 100%
+  overflow: hidden
+
+
 .scroll-nav-top
   background-color: white
   padding-top: 5px
   padding-bottom: 5px
   //transition-duration: .7s
   border-bottom: $blue solid 1px
+  z-index: 2000
 
   img
     transform: scale(.7)
+
+.global-search
+  color: $orange
+
+  &:hover
+    color: $blue
+    text-decoration: none
+
+//
+.search-header
+
+  @media ($break-xs)
+    display: none

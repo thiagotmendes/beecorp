@@ -1,5 +1,5 @@
 <?php get_header() ?>
-	<section class="main-banner main-banner__interno" style="background-image: url(<?= get_template_directory_uri() ?>/assets/images/banner.png)">
+	<section class="main-banner main-banner__interno">
 		<header class="container main-banner__interno--container">
 			<h1 class="main-title"> Resultado: <?php echo get_search_query(); ?> </h1>
 			<div class="main-banner__breadcrumb">
@@ -19,7 +19,7 @@
 			<div class="">
 				<?php get_template_part('parts/category-nav/category-blog') ?>
 			</div>
-			<div class="main-section__background-efects main-section__background-efects--blue">
+			<div class="">
 				<?php get_template_part('parts/loop/loop-search') ?>
 			</div>
 		</div>

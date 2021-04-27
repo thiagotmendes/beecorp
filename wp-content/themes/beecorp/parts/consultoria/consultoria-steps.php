@@ -1,4 +1,5 @@
-<section class="main-section main-section__single main-section__background-efects main-section__background-efects--blue">
+<?php if(get_field('titulo_escopo')): ?>
+<section class="main-section main-section__single main-section__background-efects main-section__background-efects--blue main-section__background-efects--left">
 	<div class="container">
 		<header class="text-center">
 			<h3 class="main-title main-title__section main-title__section--blue"><?= get_field('titulo_escopo') ?></h3>
@@ -31,3 +32,4 @@
 		?>
 	</div>
 </section>
+<?php endif;

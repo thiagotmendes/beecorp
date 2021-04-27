@@ -1,5 +1,5 @@
 <?php get_header() ?>
-    <section class="main-banner main-banner__interno" style="background-image: url(<?= get_template_directory_uri() ?>/assets/images/banner.png)">
+    <section class="main-banner main-banner__interno" style="background-image: url(<?= get_the_post_thumbnail_url(get_the_ID()) ?>)">
         <header class="container main-banner__interno--container">
             <h1 class="main-title"> <?php the_archive_title() ?> </h1>
             <div class="main-banner__breadcrumb">

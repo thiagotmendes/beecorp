@@ -5,10 +5,7 @@
 				x
 			</div>
 			<div class="embed-responsive embed-responsive-16by9">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/MYCgDF-oMIc"
-                        title="YouTube video player"
-                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+				<?php the_field('youtube_video_home', 'option'); ?>
 			</div>
 		</div>
 	</div>

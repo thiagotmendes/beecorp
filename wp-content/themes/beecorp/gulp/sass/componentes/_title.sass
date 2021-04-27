@@ -3,6 +3,9 @@
   font-weight: 600
   color: $black
 
+  small
+    display: block
+
   &--blue
     color: $blue
 
@@ -26,6 +29,7 @@
   &__banner
     font-size: 48px
     line-height: 56px
+    margin-bottom: $inner
 
     @media ($break-xs)
       font-size: 30px
@@ -34,7 +38,7 @@
   &__solucoes
     font-style: normal
     font-weight: bold
-    font-size: 24px
+    font-size: 20px
     //line-height: 56px
 
   &__section
@@ -55,28 +59,45 @@
     &--small
       display: block
 
+      &--orange
+        color: $orange
+
+  &__blog
+    font-style: normal
+    font-size: 18px
+
+    &--small
+      display: flex
+      justify-content: space-between
+      margin-top: 20px
+      margin-bottom: 20px
+
+      span
+        padding-left: 5px
+        padding-right: 5px
+
 
   &__interno
-    font-style: normal;
-    font-weight: 800;
-    font-size: 50px;
+    font-style: normal
+    font-weight: 800
+    font-size: 40px
 
     @media ($break-xs)
       font-size: 30px
       margin-top: 15px
 
   &__description
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
+    font-style: normal
+    font-weight: 500
+    font-size: 16px
+    line-height: 24px
     margin-bottom: 20px
 
   &__topic
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 24px;
+    font-style: normal
+    font-weight: bold
+    font-size: 20px
+    line-height: 24px
     margin-top: 20px
     display: block
     position: relative
@@ -88,17 +109,17 @@
       margin-top: 0
 
     &:before
-      content: '';
-      border: #EB9003 solid 3px;
-      background-color: white;
-      position: absolute;
-      -webkit-transition-duration: 2s;
-      -o-transition-duration: 2s;
-      transition-duration: 2s;
-      width: 15px;
-      height: 15px;
-      left: -20px;
-      top: 5px;
-      border-radius: 50%;
-      z-index: 100;
+      content: ''
+      border: #EB9003 solid 3px
+      background-color: white
+      position: absolute
+      -webkit-transition-duration: 2s
+      -o-transition-duration: 2s
+      transition-duration: 2s
+      width: 15px
+      height: 15px
+      left: -20px
+      top: 5px
+      border-radius: 50%
+      z-index: 100
 

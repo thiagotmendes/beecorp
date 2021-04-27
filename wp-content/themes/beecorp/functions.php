@@ -97,8 +97,8 @@ Modo de uso:
 /* ----------------------------------------------------- */
 /* Resumo com limite de palavras customizada */
 /* ----------------------------------------------------- */
-function the_excerpt_limit($limit) {
-    $excerpt = explode(' ', get_the_excerpt(), $limit);
+function the_excerpt_limit($limit, $postId = null) {
+    $excerpt = explode(' ', get_the_excerpt($postId), $limit);
     if (count($excerpt)>=$limit) {
         array_pop($excerpt);
         $excerpt = implode(" ",$excerpt).'...';

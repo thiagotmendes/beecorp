@@ -9,4 +9,12 @@ if( function_exists('acf_add_options_page') ) {
 		'redirect' 		=> false
 	));
 
+	$menuBanner = acf_add_options_page(array(
+		'page_title' 	=> 'Footer',
+		'menu_title' 	=> 'Footer',
+		'menu_slug' 	=> 'Footer',
+		'position'     => 2,
+		'redirect' 		=> false
+	));
+
 }

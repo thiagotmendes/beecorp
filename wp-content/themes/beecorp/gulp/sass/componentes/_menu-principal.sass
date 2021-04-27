@@ -62,3 +62,22 @@
   &__solution
     display: flex
     justify-content: center
+
+    @media ($break-xs)
+      flex-direction: column
+
+      .main-btn
+        width: 100%
+        margin-bottom: 10px
+
+  &__fale-conosco
+
+    a
+      border: $orange solid 1px
+      padding-right: 20px
+      color: $orange !important
+      border-radius: 18px
+
+      &:hover
+        background-color: $orange
+        color: white !important

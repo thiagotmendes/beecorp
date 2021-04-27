@@ -1,10 +1,30 @@
 .main-section
   padding-top: $inner * 2
   padding-bottom: $inner * 2
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  min-height: 60%
+
+  h1,h2,h3,h4,h5
+    margin-top: 40px
+    margin-bottom: 40px
+
+  &__primeira-dobra
+    padding-bottom: $inner !important
+
+  &__interno
+    min-height: auto
+
+  @media ($break-xs)
+    padding-top: $inner * 2
+    padding-bottom: $inner * 5
 
   &__search
     padding-top: $inner
     padding-bottom: $inner
+    min-height: auto
     background-color: #FAFAFA
 
     .input-group
@@ -23,7 +43,7 @@
 
   &__about
     padding-top: $inner * 5
-    background-color: #F5F5F5
+    //background-color: #F5F5F5
 
     @media ($break-xs)
       padding-top: $inner * 2
@@ -76,14 +96,19 @@
       bottom: -20px
 
   &__solucoes
+    background-color: rgb(245, 246, 250)
 
     &--items
       margin-top: $inner * 2
-      background-image: url("../images/bg-blue.png")
+      //background-image: url("../images/bg-blue.png")
       background-position: center
+      background-repeat: no-repeat
+
+      @media($break-xs)
+        background-image: none
 
     &--relacionadas
-      background-image: url("../images/dots-especial.png")
+      //background-image: url("../images/dots-especial.png")
       background-repeat: no-repeat
       background-position: right 20%
 
@@ -91,6 +116,8 @@
     background-image: url("../images/bg-video.png")
     background-size: cover
     background-position: center top
+    background-attachment: fixed
+    //
     height: 640px
     display: flex
     justify-content: center
@@ -129,28 +156,37 @@
       justify-content: space-between
       z-index: 100
 
+
   &__clientes
 
     &--slider
       margin-top: $inner * 2
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 70px;
+      display: flex
+      align-items: center
+      justify-content: center
+      height: 70px
 
       &--item
         display: flex
         align-items: center
         justify-content: center
         height: 100%
-        filter: brightness(0%)
+        //filter: brightness(0%)
 
         img
-          filter: grayscale(70%)
+          //filter: grayscale(70%)
+          //width: 80px
+          height: 100%
+
+  &__comment
+    background-color: #f5f6fa
+    padding-top: $inner * 2
+    padding-bottom: $inner * 2
+    margin-top: 0
 
   &__depoimentos
     //background-color: #F5F5F5
-    background-color: $orange
+    background-color: #F5F5F5
 
     &__slider
       margin-top: $inner * 2
@@ -164,16 +200,21 @@
         font-size: 16px
         display: block
         position: relative
+        z-index: 2
 
         &:before
-          content: '\E006'
+          content: '\E007'
           font-family: "icons"
           position: absolute
           font-size: 50px
           font-weight: bold
           top: -20%
-          left: -30px
-          color: rgba($black, .1)
+          left: -60px
+          color: rgba($orange, .3)
+          z-index: 1
+
+          @media ($break-xs)
+            content: none
 
     &__autor
       margin-top: 20px
@@ -186,6 +227,8 @@
           display: block
 
   &__single
+    padding-top: $inner * 2
+    padding-bottom: $inner * 2
 
     &--first
       margin-top: -$inner * 4
@@ -209,6 +252,9 @@
       background-repeat: no-repeat
       z-index: 0
 
+      @media ($break-xs)
+        content: none
+
     &:before
       top: 0%
       left: 0%
@@ -219,6 +265,16 @@
       right: 0%
       background-position: 95% 90%
 
+    &--left
+
+      &:after
+        content: none
+
+    &--right
+
+      &:before
+        content: none
+
     &--blue
 
       &:before, &:after
@@ -228,6 +284,7 @@
 
       &:before, &:after
         background-image: url("../images/white-dot.png")
+        opacity: .3
 
       &:before
         background-position: 17% 25%
@@ -240,3 +297,23 @@
 
   .main-section__solucoes--items
     margin-top: 0
+
+.assets_blog
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+
+.projetos-slider
+
+  .main-box--blog
+    box-shadow: none !important
+
+
+.comment-form
+  display: flex
+  flex-direction: column
+
+.comment-form-comment, .comment-form-author,
+.comment-form-email, .comment-form-url, .comment-form-cookies-consent
+  display: flex
+  flex-direction: column

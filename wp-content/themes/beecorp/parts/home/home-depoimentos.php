@@ -1,10 +1,10 @@
-<section class="main-section main-section__depoimentos main-section__background-efects main-section__background-efects--white">
+<section class="main-section main-section__depoimentos main-section__background-efects main-section__background-efects--blue main-section__background-efects--right">
 	<div class="container">
 		<header class="text-center">
-			<h5 class="main-title main-title__section main-title__section--white">
+			<h5 class="main-title main-title__section main-title__section--orange">
 				DEPOIMENTOS
 			</h5>
-			<div class="main-title main-title__sub-title main-title__sub-title--white">
+			<div class="main-title main-title__sub-title main-title__sub-title--orange">
 				O que nossos clientes dizem
 			</div>
 		</header>

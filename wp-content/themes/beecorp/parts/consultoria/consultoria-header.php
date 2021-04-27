@@ -9,6 +9,13 @@
 				<div class="main-title__description">
 					<?= get_field('sub_titulo_header_pagina') ?>
 				</div>
+                <div class="">
+					<?php
+					if ( function_exists('yoast_breadcrumb') ) {
+						yoast_breadcrumb( '<p id="breadcrumbs" class="main-banner__breadcrumb--item">','</p>' );
+					}
+					?>
+                </div>
 			</header>
 		</div>
 		<div class="main-banner__single--container--col-2">

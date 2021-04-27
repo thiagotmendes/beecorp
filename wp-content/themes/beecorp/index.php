@@ -8,5 +8,6 @@ get_header();
     get_template_part('parts/home/home-blog');
     get_template_part('parts/home/home-clientes');
     get_template_part('parts/home/home-depoimentos');
+	get_template_part('parts/home/home-cases');
     get_template_part('parts/footer/footer-pre-footer-img');
 get_footer();
