@@ -12,7 +12,7 @@
 		</header>
 	</section>
 
-	<?= get_template_part('parts/forms/form-search-global') ?>
+    <?php get_template_part('parts/forms/form-search-solucao') ?>`
 
 	<section class="main-section main-section__background-efects main-section__background-efects--blue main-section__background-efects--right">
 		<div class="container">

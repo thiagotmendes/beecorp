@@ -21,7 +21,7 @@
 					$linkCta = ($ctaInfo['interno'] == 'interno') ? $ctaInfo['link_interno'] : $ctaInfo['link_externo'];
 					$target = ($ctaInfo['interno'] == 'interno') ? "_self" : "_blank";
 				?>
-				<a href="<?= $linkCta ?>" class="main-btn btn main-btn--white" target="<?= $target ?>">
+				<a href="<?= $linkCta ?>" data-modal="consultor" class="main-btn btn main-btn--white mt-4 open-modal" target="<?= $target ?>">
 					<?= $ctaInfo['texto_cta'] ?>
 				</a>
 				<?php endif; ?>

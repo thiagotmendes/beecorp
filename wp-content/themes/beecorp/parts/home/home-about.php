@@ -32,26 +32,23 @@
                     if(have_rows('links_sobre', 'option')){
                         while (have_rows('links_sobre', 'option')){ the_row();
                             ?>
-                            <a href="<?= get_sub_field('link') ?>" class="main-control__menu--link--about main-link">
-                                <div class="">
+                            <div class="">
+                                <a href="<?= get_sub_field('link') ?>" class="main-control__menu--link--about main-link">
                                     <span> <?= get_sub_field('titulo') ?></span>
-	                                <?= get_sub_field('sub_titulo') ?>  <i class="icon icon-arrow-double"></i>
-                                </div>
-                            </a>
+                                    <?= get_sub_field('sub_titulo') ?>  <i class="icon icon-arrow-double"></i>
+                                </a>
+                            </div>
                             <?php
                         }
                     }
                     ?>
 				</div>
-
-				<?php  if(get_field('texto_cta_sobre', 'option')):  ?>
-                    <div class="main-section__about--links mt-3">
-                        <a href=" <?= get_field('link_cta_sobre', 'option') ?>" class="btn main-btn main-btn__solution--orange">
-							<?= get_field('texto_cta_sobre', 'option') ?>
-                        </a>
-                    </div>
-				<?php endif; ?>
 			</div>
 		</div>
+
+        <div class="">
+	        <?php get_template_part('parts/cta/cta-end-section', 'cta-end-section', array('section' => 'about')) ?>
+        </div>
+
 	</div>
 </section>

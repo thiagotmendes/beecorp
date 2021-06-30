@@ -1,4 +1,4 @@
-<section class="main-section main-section__single main-section__background-efects main-section__background-efects--blue main-section__background-efects--right">
+<section class="main-section main-section__interno main-section__single main-section__background-efects main-section__background-efects--blue main-section__background-efects--right">
 	<div class="container ">
 
 		<header class="text-center">

@@ -11,6 +11,8 @@ if(have_posts()){
 							<?php the_title() ?>
 						</h1>
                         <div class="">
+
+
 							<?php
 							if ( function_exists('yoast_breadcrumb') ) {
 								yoast_breadcrumb( '<p id="breadcrumbs" class="main-banner__breadcrumb--item">','</p>' );
@@ -34,11 +36,24 @@ if(have_posts()){
 			<div class="container main-section__single--first">
                 <div class="row">
                     <div class="col-md-10 offset-md-1">
+                        <div class="meta-dados">
+                            <div class="">
+                                Por: <?php the_author() ?>
+                            </div>
+                            <div class="">
+                                <time>
+		                            <?php the_time('d/m/Y') ?>
+                                </time>
+                            </div>
+                        </div>
 	                    <?php the_content(); ?>
                     </div>
                 </div>
 			</div>
 		</section>
+
+        <?php get_template_part('parts/author/author-profile') ?>
+
         <section class="main-section main-section__comment ">
             <div class="container">
                 <div class="row">

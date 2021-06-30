@@ -64,7 +64,8 @@
   position: fixed
   top: 25%
   right: 20px
-  background: #fff
+  background: $orange
+  color: white
   border: none
   border-radius: 8px
   -webkit-box-shadow: -1px 3px 15px -3px rgba(0,0,0,0.75)
@@ -74,8 +75,11 @@
   transition-duration: 1s
   z-index: 2000
 
+  @media ($break-xs)
+    display: none
+
   &:hover, &--active
-    background-color: $orange
+    background-color: $blue
     text-decoration: none
     color: white
 
@@ -83,12 +87,15 @@
     top: 31%
     padding-top: 40px
     padding-bottom: 20px
+    color: black
     width: 400px
     height: auto
     right: -100%
     transition-duration: 2s
+    background-color: white
 
     &:hover
+      color: black
       background-color: white
       color: black
 

@@ -66,6 +66,33 @@
         }
         ?>
 		</div>
+        <?php if(get_field('tittulo_cta_beneficios')): ?>
+        <div class="text-center main-section__cta mt-5">
+			<?php
+            echo '<div>'.get_field('tittulo_cta_beneficios').' </div>';
+			if(get_field('link_cta_beneficios_copiar')):
+				echo '<div class="main-section__cta--link">';
+				echo '<a href="'. get_field('link_cta_beneficios_copiar') .'" class="main-link main-link__ctas">';
+				echo get_field('descricao_cta_beneficios');
+				echo "<i class='icon icon-arrow-double'></i>";
+				echo '</a>';
+				echo "</div>";
+			endif;
+			?>
+        </div>
+        <?php else: ?>
+            <div class="text-center main-section__cta mt-5">
+            <?php
+                echo '<div> Comece agora a transformação da sua empresa. </div>';
+                echo '<div class="main-section__cta--link">';
+                echo '<a href="'.esc_url(home_url('contato')).'" class="main-link main-link__ctas">';
+                echo  "Fale com nossos especialistas ";
+                echo "<i class='icon icon-arrow-double'></i>";
+                echo '</a>';
+                echo "</div>";
+            ?>
+            </div>
+        <?php endif; ?>
 	</div>
 </section>
 <?php endif;

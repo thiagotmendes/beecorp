@@ -4,10 +4,12 @@ if(!empty($relatedSolution)):
 ?>
     <section class="main-section main-section__background-efects main-section__background-efects--blue main-section__background-efects--left" >
         <div class="container main-section__solucoes--relacionadas">
+            <?php if(get_field('titulo_solucoes_relacionadas')): ?>
             <header class="text-center">
-                <h5 class="main-title main-title__section">Soluções relacionadas</h5>
-                <div class="main-title main-title__sub-title">Conheça outras soluções</div>
+                <h5 class="main-title main-title__section main-title__section--blue"><?= get_field('titulo_solucoes_relacionadas') ?></h5>
+                <div class="main-title main-title__sub-title"><?= get_field('sub_titulo_solucoes_relacionadas') ?></div>
             </header>
+            <?php endif ?>
             <div class="row">
 		        <?php
 		        foreach ($relatedSolution as $post): setup_postdata($post);

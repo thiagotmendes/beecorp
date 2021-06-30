@@ -20,32 +20,41 @@
                     <?php
                     if(have_rows('menu_footer', 'option')):
                         while(have_rows('menu_footer', 'option')): the_row();
-                            ?>
-                            <ul class="main-menu__footer__item">
-                                <li><a href="" class="main-menu__footer__item--title main-link"><?= get_sub_field('titulo_menu_footer', 'option')  ?></a></li>
-                                <?php
-                                if(have_rows('itens_menu')):
-                                    while (have_rows('itens_menu')): the_row();
-                                        $itemMenu = get_sub_field('menu');
+                            $tipoCategoria = get_sub_field('tipo_de_link');
+
+                            if($tipoCategoria == 'term'){
+	                            $termCategoria = get_sub_field('selecionar_a_categoria');
+
+	                            ?>
+                                <ul class="main-menu__footer__item">
+                                    <li><a href="" class="main-menu__footer__item--title main-link"><?= get_sub_field('titulo_menu_footer', 'option')  ?></a></li>
+                                    <?php
+                                    foreach ($termCategoria as $term){
                                         ?>
-                                        <li><a href="<?= $itemMenu['url'] ?>" class="main-link"><?= $itemMenu['title'] ?></a></li>
-                                        <?php
-                                    endwhile;
-                                endif
+                                        <li><a href="<?= get_term_link($term) ?>" class="main-link"><?= $term->name  ?></a></li>
+                                    <?php
+                                    }
+                                    ?>
+                                </ul>
+                                <?php
+                            } else {
                                 ?>
-                            </ul>
-                            <?php
+                                <ul class="main-menu__footer__item">
+                                    <li><a href="" class="main-menu__footer__item--title main-link"><?= get_sub_field('titulo_menu_footer', 'option')  ?></a></li>
+		                            <?php
+		                            $itemMenu = get_sub_field('itens_menu');
+		                            foreach ($itemMenu as $menu):
+			                            ?>
+                                        <li><a href="<?= get_the_permalink($menu->ID) ?>" class="main-link"><?= $menu->post_title?></a></li>
+		                            <?php
+		                            endforeach;
+		                            ?>
+                                </ul>
+                                <?php
+                            }
                         endwhile;
                     endif;
                     ?>
-<!--                        <ul class="main-menu__footer__item">-->
-<!--                            <li><a href="" class="main-menu__footer__item--title main-link">Empresa</a></li>-->
-<!--                            <li><a href="" class="main-link">Sobre a BeeCorp</a></li>-->
-<!--                            <li><a href="" class="main-link">Clientes</a></li>-->
-<!--                            <li><a href="" class="main-link">Escritórios</a></li>-->
-<!--                            <li><a href="" class="main-link">Fale Conosco</a></li>-->
-<!--                            <li><a href="" class="main-link">Trabalhe Conosco</a></li>-->
-<!--                        </ul>-->
                 </nav>
             </div>
         </div>

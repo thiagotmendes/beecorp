@@ -1,5 +1,7 @@
 .main-animation
   display: flex
+  flex-wrap: wrap
+
 
   @media ($break-xs)
     flex-direction: column
@@ -11,7 +13,8 @@
     font-size: 16px
     line-height: 24px
     padding-top: $inner * 2
-    max-width: 33%
+    max-width: 25%
+    text-align: center
 
     @media ($break-xs)
       max-width: 100%
@@ -74,3 +77,47 @@
 
     &:last-child
       padding-right: 0
+
+// loading animation
+.load_ring
+  display: none
+  justify-content: center
+  align-items: center
+
+  &__active
+    display: flex
+    animation: fadeIn 1s
+
+.lds-ring
+  display: inline-block
+  position: relative
+  width: 40px
+  height: 40px
+  margin-right: 10px
+
+.lds-ring div
+  box-sizing: border-box
+  display: block
+  position: absolute
+  width: 34px
+  height: 34px
+  margin: 4px
+  border: 4px solid $orange
+  border-radius: 50%
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite
+  border-color: $orange transparent transparent transparent
+
+.lds-ring div:nth-child(1)
+  animation-delay: -0.45s
+
+.lds-ring div:nth-child(2)
+  animation-delay: -0.3s
+
+.lds-ring div:nth-child(3)
+  animation-delay: -0.15s
+
+@keyframes lds-ring
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)

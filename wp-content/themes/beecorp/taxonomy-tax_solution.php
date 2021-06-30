@@ -1,8 +1,10 @@
 <?php
 $termTitle = get_queried_object()->name;
+$termTaxonomy = get_queried_object()->taxonomy;
+$termSlug = get_queried_object()->slug;
 get_header();
 ?>
-	<section class="main-banner main-banner__interno" style="background-image: url(<?= get_the_post_thumbnail_url(get_the_ID()) ?>)">
+	<section class="main-banner main-banner__interno">
 		<header class="container main-banner__interno--container">
 			<h1 class="main-title"> <?= $termTitle ?> </h1>
 			<div class="main-banner__breadcrumb">
@@ -15,42 +17,28 @@ get_header();
 		</header>
 	</section>
 
-	<section class="main-section main-section__search">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 offset-md-3">
-					<div class="form-search input-group mb-3">
-						<input type="text" class="form-control" placeholder="Pesquise por palavras chave    " aria-label="Recipient's username" aria-describedby="basic-addon2">
-						<div class="input-group-append">
-							<button class="btn-forn_search" type="button">
-								<i class="icon icon-search"></i>
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+    <?php get_template_part('parts/forms/form-search-solucao') ?>
 
-	<section class="main-section">
+	<section class="main-section main-section__background-efects main-section__background-efects--blue main-section__background-efects--left">
 		<div class="container">
-			<header class="text-center mb-5">
-				<h2 class="main-title main-title__section main-title__section--blue">Conheça nossos parceiros</h2>
-				<div class="main-title main-title__sub-title">Alguns dos nossos projetos e <br> parcerias de sucesso</div>
-			</header>
-
 			<div class="">
 				<?php get_template_part('parts/category-nav/category-solution') ?>
 			</div>
 
 			<div class="">
 				<?php get_template_part('parts/loop/loop-solucao') ?>
+                <div class="load_more"> </div>
+                <div class="load_ring">
+                    <div class="lds-ring"><div></div><div></div><div></div><div></div></div> Carregando
+                </div>
 			</div>
 
-			<div class="text-center main-section__cta">
-				<p class="">Quer descobrir a solução ideal para o seu negócio? </p>
-				<a href="" class="btn main-btn">Conversar com um especialista</a>
-			</div>
+            <div class="text-center mt-5">
+                <a href="" class="btn main-btn main-btn__solution main-btn__solution--orange main-btn__load" data-page="2" data-post="solucoes" data-category="<?= $termSlug ?>" data-taxonomy="<?= $termTaxonomy ?>">
+                    Carregar mais
+                </a>
+            </div>
+
 		</div>
 	</section>
 <?php get_footer() ?>

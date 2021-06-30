@@ -23,12 +23,18 @@
 
             <div class="">
 				<?php get_template_part('parts/loop/loop-solucao') ?>
+                <div class="load_more"> </div>
+                <div class="load_ring">
+                    <div class="lds-ring"><div></div><div></div><div></div><div></div></div> Carregando
+                </div>
             </div>
 
-            <div class="text-center main-section__cta">
-                <p class="">Quer descobrir a solução ideal para o seu negócio? </p>
-                <a href="" class="btn main-btn">Conversar com um especialista</a>
+            <div class="text-center mt-5">
+                <a href="" class="btn main-btn main-btn__solution main-btn__solution--orange main-btn__load" data-page="2" data-post="solucoes">
+                    Carregar mais
+                </a>
             </div>
+
         </div>
     </section>
 <?php get_footer() ?>

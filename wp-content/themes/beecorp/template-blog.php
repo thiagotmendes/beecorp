@@ -13,7 +13,7 @@
         </header>
     </section>
 
-    <?= get_template_part('parts/forms/form-search-global') ?>
+    <?= get_template_part('parts/forms/form-search-blog') ?>
 
     <section class="main-section main-section__background-efects main-section__background-efects--blue">
         <div class="container">
@@ -24,7 +24,7 @@
             <div class="">
 				<?php get_template_part('parts/loop/loop-blog') ?>
             </div>
-
+	        <?php get_template_part('parts/cta/cta-end-section', 'cta-end-section', array('section' => 'blog')) ?>
         </div>
     </section>
 <?php get_footer() ?>

@@ -1,5 +1,13 @@
 <nav class="main-menu__solution">
 	<?php
+	if( is_page_template( 'template-ebooks.php' ) ):
+		$activeBlog = "main-btn__solution--orange--active";
+	endif;
+	?>
+    <a href="<?= esc_url(home_url('ebooks')) ?>" class="btn main-btn main-btn__solution main-btn__solution--orange <?= $activeBlog ?>">
+        Todos
+    </a>
+	<?php
 	$termId = get_queried_object()->term_id;
 	$argTerms = array(
 		'taxonomy' => 'tax_ebook',

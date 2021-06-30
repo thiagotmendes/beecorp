@@ -1,25 +1,27 @@
 <div class="row main-section__solucoes--items">
 	<?php
+	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
     $termID = get_queried_object()->slug;
     $argSolucao = array(
-        'post_type'         => 'solucoes',
-
+        'post_type'      => 'solucoes',
+        'paged'          => $paged
     );
     if(is_home()){
         $limitePadrão = (!get_field('quantidade_de_solucoes', 'option') || get_field('quantidade_de_solucoes', 'option') == 0)? 8 : get_field('quantidade_de_solucoes', 'option');
 
         $arrayPage = array(
             'posts_per_page'    => $limitePadrão,
-            'orderby'   => 'rand'
+            'orderby'   => 'title',
+            'order'     => 'asc'
         );
     } else {
 	    $arrayPage = array(
             'posts_per_page'    => 12,
-            'orderby'   => 'rand'
+            'orderby'   => 'title',
+            'order'     => 'asc'
         );
     }
 
-//    echo get_field('quantidade_de_solucoes', 'option');
     $argSolucao = array_merge($argSolucao, $arrayPage);
     // verify if have some term id to merge arrays
     if(!empty($termID)){
@@ -39,25 +41,7 @@
     //
     $loopSolucao = get_posts($argSolucao);
 	foreach ($loopSolucao as $post): setup_postdata($post);
-		?>
-		<div class="col-md-3 mt-3 mb-3">
-            <div class="main-box main-box__loop-blog">
-                <div class="">
-                    <div class="main-box__image">
-                        <img src="<?= get_field('icone_item') ?>" alt="<?php get_the_title() ?>" width="50">
-                    </div>
-                    <header>
-                        <h4 class="main-title main-title__solucoes"><?php the_title() ?></h4>
-                    </header>
-                    <p>
-		                <?php the_excerpt_limit(10); ?>
-                    </p>
-                </div>
-
-                <a href="<?php the_permalink(); ?>" class="btn main-btn main-btn--white main-btn--white__solution">Acesse agora</a>
-            </div>
-		</div>
-	    <?php
+		get_template_part('parts/box/box-solucoes');
 	endforeach;
 	wp_reset_postdata();
 	?>

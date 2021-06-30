@@ -87,7 +87,7 @@ function create_posttype(){
 			'show_in_rest' => true,
 			'public' => true,
 			'hierarchical' => true,
-			'has_archive' => 'materiais-ricos',
+//			'has_archive' => 'materiais-ricos',
 			'menu_position' => 5,
 			'rewrite' => array('slug' => 'materiais-ricos'),
 			'supports' => array(
@@ -104,7 +104,7 @@ function create_posttype(){
 		'ebooks',
 		array(
 			'label' => __( 'Categorias ebooks', 'boilerplate' ),
-			'rewrite' => array( 'slug' => 'materiais-ricos' ),
+			'rewrite' => array( 'slug' => 'ebooks' ),
 			'hierarchical' => true,
 		)
 	);

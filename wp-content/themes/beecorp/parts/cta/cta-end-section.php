@@ -7,13 +7,11 @@
 		echo '<div>'.get_field('descricao_pre_cta_solucao', 'option').' </div>';
 	endif;
 	if(get_field('cta_solucoes', 'option')):
-		echo '<div class="row">';
-		echo '<div class="col-md-4 offset-md-4">';
+		echo '<div class="main-section__cta--link">';
 		echo '<a href="'. get_field('cta_solucoes', 'option') .'" class="main-link main-link__ctas">';
 		echo get_field('texto_cta_solucao', 'option');
 		echo "<i class='icon icon-arrow-double'></i>";
 		echo '</a>';
-		echo "</div>";
 		echo "</div>";
 	endif;
 	?>
@@ -26,18 +24,50 @@
 		echo '<div>'.get_field('descricao_cta_cliente', 'option').' </div>';
 	endif;
 	if(get_field('cta_cliente', 'option')):
-		echo '<div class="row">';
-		echo '<div class="col-md-4 offset-md-4">';
+		echo '<div class="main-section__cta--link">';
 		echo '<a href="'. get_field('cta_cliente', 'option') .'" class="main-link main-link__ctas">';
 		echo get_field('texto_cta_cliente', 'option');
 		echo "<i class='icon icon-arrow-double'></i>";
 		echo '</a>';
 		echo "</div>";
-		echo "</div>";
 	endif;
 	?>
 </div>
-<?php
+<?php elseif($args['section'] == 'blog'): ?>
+        <div class="text-center main-section__cta mt-5">
+			<?php
+			if( get_field('titulo_texto_cta_blog_page', 'option') ):
+				echo '<div>'.get_field('titulo_texto_cta_blog_page', 'option').' </div>';
+			endif;
+			if(get_field('link_cta_blog_page', 'option')):
+				echo '<div class="main-section__cta--link">';
+				echo '<a href="'. get_field('link_cta_blog_page' , 'option') .'" class="main-link main-link__ctas">';
+				echo get_field('texto_cta_blog_page' , 'option');
+				echo "<i class='icon icon-arrow-double'></i>";
+				echo '</a>';
+				echo "</div>";
+			endif;
+			?>
+        </div>
+	<?php
+    elseif ($args['section'] == 'about'):
+        ?>
+    <div class="text-center main-section__cta mt-5">
+    <?php
+	    if ( get_field( 'texto_sobre_cta_sobre', 'option' ) ):
+		    echo '<div>' . get_field( 'texto_sobre_cta_sobre', 'option' ) . ' </div>';
+	    endif;
+	    if ( get_field( 'texto_cta_sobre', 'option' ) ):
+		    echo '<div class="main-section__cta--link">';
+		    echo '<a href="' . get_field( 'link_cta_sobre', 'option' ) . '" class="main-link main-link__ctas">';
+		    echo get_field( 'texto_cta_sobre', 'option' );
+		    echo "<i class='icon icon-arrow-double'></i>";
+		    echo '</a>';
+		    echo "</div>";
+	    endif;
+	    ?>
+    </div>
+    <?php
 	else:
 		?>
 		<div class="text-center main-section__cta mt-5">

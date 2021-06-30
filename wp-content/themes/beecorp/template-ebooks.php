@@ -21,7 +21,7 @@
 				<?php get_template_part('parts/category-nav/category-ebooks') ?>
 			</div>
 
-			<div class="main-section__background-efects main-section__background-efects--blue">
+			<div class="">
 				<?php get_template_part('parts/loop/loop-ebook') ?>
 			</div>
 
